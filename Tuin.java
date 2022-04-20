@@ -14,13 +14,19 @@ class Tuin {
         System.out.println("Welkom in mijn tuin.");
         Sproeier slangetje = new Sproeier();
         TuinDomotica slimmeSchakelaar = new TuinDomotica();
+        TuinVerlichting verlichting = new TuinVerlichting();
         String input = "";
         do
         {
-            System.out.println("Regen installatie staat op"+ slimmeSchakelaar.getSlimmeschakelaar());
+            System.out.println("Regen installatie staat op "+ slimmeSchakelaar.getSlimmeschakelaar());
             System.out.println("Regent het (JA/NEE)");
             input = reader.readLine();
             slimmeSchakelaar.setRegen(input.equalsIgnoreCase("JA"));
+            
+            System.out.println("Is het daglicht? (JA/NEE)");
+            input = reader.readLine();
+            verlichting.setDaglicht(input.equalsIgnoreCase("NEE"));
+            verlichting.verlichtingState();
 
             System.out.print("Wilt u stoppen (JA/NEE)");
             input = reader.readLine();
